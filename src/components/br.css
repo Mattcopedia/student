@@ -1,0 +1,529 @@
+br.responsive {
+    display: inline; 
+   
+  }
+  @media (min-width: 768px) {
+    br.responsive {
+      display: none; 
+    }
+
+  } 
+
+  br.responsivemodal {
+    display: inline; 
+   
+  }
+  @media (min-width: 425px) {
+    br.responsivemodal {
+      display: none; 
+    }
+
+  } 
+
+  br.responsivemhelp {
+    display: inline; 
+   
+  }
+  @media (min-width: 425px) and (min-width: 768px) {
+    br.responsivehelp {
+      display: none; 
+    }
+
+  } 
+
+   
+
+
+
+  .fitscreen {
+    width: 100%;
+    height: 100%;
+     
+  }
+  .heropattern {
+    background-image: url("../assets/img/bng.PNG");
+    background-repeat: repeat;
+    background-size: 100%;
+    background-position: center;
+    
+  }
+
+  .pos-center {
+    position: fixed;
+    top: calc(50% );
+    left: calc(50% ); 
+  }
+
+  .loader {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #3498db;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    animation: spin 1s linear infinite;
+    margin: auto !important; 
+    margin-left: 40px;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .form {
+    border-color: #787878;
+    border-style: solid;
+    width: 367px;
+    height: 35px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    border-width: 0.5px;  
+  }
+
+  .form:focus {
+    padding-left: 10px;
+  }
+
+  .desc {
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+   
+  }
+
+  .upload {
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+  }
+
+  textarea {
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+  }
+
+  option[selected] {
+    color: blue;  
+} 
+
+  .purplebtn {
+  border-color: #787878;
+  border-style: solid;
+  width: 367px;
+  height: 44px; 
+  background-color: #2d0353;
+  border-radius: 6px;
+  margin: 0px 0px 14px 0px;
+  border-width: 0.5px;
+  color:#ffffff;  
+  margin-top: 10px;
+  }
+
+  .sendbtn {
+    border-color: #787878;
+    border-style: solid;
+    width: 400px;
+    height: 44px; 
+    background-color: #2d0353;
+    border-radius: 6px;
+    margin: 0px 0px 14px 0px;
+    border-width: 0.5px;
+    color:#ffffff; 
+    margin-top: 10px;
+ 
+    margin-left: 20px;
+  
+    }
+
+  .form::placeholder {
+    
+    padding-left: 20px;
+    
+  } 
+   
+.bordernone,th,td {
+  border: none;
+}
+.file[type="file"] {
+  display: none;
+}
+
+  table,
+    th,
+    td {
+        border: 0.5px solid #e5e5e5;
+        border-collapse: collapse;
+        text-align: center !important;
+    }
+     
+    th,
+    td {
+        padding: 1px;
+    }
+    .adjust {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+
+
+    
+    
+  .Youresult,
+  th,
+  td {
+      border: none;
+      border-collapse: collapse; 
+      text-align: center;
+  } 
+   
+  th,
+  td {
+      padding: 1px;
+  }
+  
+  .Yourdoc,
+  th,
+  td {
+      border: none;
+      border-collapse: collapse; 
+      text-align: left !important;
+  } 
+   
+  th,
+  td {
+      padding: 1px;
+  }
+
+  .Yourdocs,
+  th,
+  td {
+      border: none;
+      border-collapse: collapse; 
+      text-align: center !important;
+      border: 0.5px solid #e5e5e5;
+      
+  }   
+
+  @media (min-width: 992px) {
+    .Yourdocs th {
+      padding-left: 50px;   
+    }
+
+  }
+  
+
+  th,
+  td {
+      padding: 1px;
+  }
+
+  .Yourcoursereg,
+  th,
+  td {
+      border: none;
+      border-collapse: collapse; 
+      text-align: left !important;
+      
+  } 
+   
+  th,
+  td {
+      padding: 1px;
+  }
+    
+
+
+
+
+    @media (max-width:768px) {
+         
+    } 
+
+    .editprofile {
+      display: flex;
+      font-size: 16px;
+      font-family: Roboto;
+      line-height: 24px;
+      color: #df8909; 
+      border-color: #df8909;
+      border-style: solid;
+      width: 140px;
+      height: 45px;
+      /* background-color: #FAFAFA; */
+      flex-direction: row;
+      justify-content: center;
+      border-radius: 8px;
+      padding: 10.5px 0px 9.5px 0px;
+      border-width: 0.5px; 
+    }
+
+    
+    .box { 
+      position: static;  
+    }
+     
+    .box select {
+      padding: 12px;
+      width: 325px !important;
+   
+      /* box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); */
+      -webkit-appearance: button;
+      appearance: button;
+      outline: none;
+
+    border-color: #787878;
+    border-style: solid;
+    
+    border-radius: 6px;
+    border-width: 0.5px; 
+    }
+    
+    
+
+   
+
+    
+
+    .box:hover::before {
+      color: rgba(255, 255, 255, 0.6);
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .box select option {
+      padding: 30px;
+    }
+
+
+    .upload select {
+      padding: 12px;
+      width: 325px;
+      -webkit-appearance: button;
+      appearance: button;
+      outline: none;
+    border-color: #787878;
+    border-style: solid;
+    margin: auto;
+    border-radius: 6px;
+    border-width: 0.5px; 
+    display: flex;
+   flex-direction: row;
+   justify-content: center;
+    }
+
+    .amendment select  {
+      padding: 8px;
+      width: 365px;
+      -webkit-appearance: button;
+      appearance: button;
+      outline: none;
+    border-color: #787878;
+    border-style: solid; 
+    margin: auto;
+    border-radius: 6px;
+    border-width: 0.5px; 
+    display: flex;
+   flex-direction: row;
+   justify-content: center;
+    }
+
+   
+
+    .searchbtn input[type=text] {
+      padding: 10px;
+      font-size: 17px;
+      width: 80%; 
+      color: white;
+      background: #250444; 
+      padding-left: 70px; 
+
+    }  
+    .searchbtn input::placeholder {
+      color: white;
+    } 
+    
+      .justify {
+        display: flex;
+        justify-content: flex-end; 
+        margin-right: 40px; 
+        padding-bottom: 40px; 
+      }
+      .justifyprint {
+        display: flex;
+        justify-content: flex-end; 
+        margin-right: 10px; 
+        padding-bottom: 40px; 
+      }
+
+
+      .reducesize select {
+        padding: 12px;
+        width: 250px;
+        -webkit-appearance: button;
+        appearance: button;
+        outline: none;  
+  
+       border-color: #787878;
+       border-style: solid;
+      
+       border-radius: 6px; 
+       border-width: 0.5px; 
+      } 
+
+      .tabelinput {
+        mix-blend-mode: normal;
+      font-size: 16px;
+      font-family: Roboto;
+      line-height: 21px;
+      color: #787878;
+      
+      }
+
+      .tabelinputleft {
+        mix-blend-mode: normal;
+      font-size: 16px;
+      font-family: Roboto;
+      line-height: 21px;
+      color: #787878;
+      text-align: left !important;
+      
+      
+
+      }
+
+     @media only screen and (max-width: 999px) {
+
+      .searchbtn input[type=text] {
+        padding: 10px;
+        font-size: 17px;
+        width: 80%; 
+        color: white;
+        background: #250444; 
+      }  
+
+
+      }  
+
+      @media only screen and (max-width: 768px) {
+        .reducesize select {
+          width: 120px;   
+        }  
+
+        .box select {
+          width: 120px; 
+        }
+
+        .amendment select  {
+          
+          width: 360px;
+          -webkit-appearance: button;
+          appearance: button;
+          outline: none;
+        border-color: #787878;
+        border-style: solid; 
+        margin: auto;
+        border-radius: 6px;
+        border-width: 0.5px; 
+        display: flex;
+       flex-direction: row;
+       justify-content: center;
+        }
+       
+        } 
+
+
+        @media only screen and (max-width: 425px)  {
+          .form {
+            border-color: #787878;
+            border-style: solid;
+            width: 280px;
+            background-color: #ffffff;
+            border-radius: 6px;
+            border-width: 0.5px;  
+            
+
+          }
+
+          .form::placeholder {
+    
+            padding-left: 20px;
+            
+          } 
+
+          .form:focus {
+            padding-left: 8px;
+          }
+
+          .purplebtn {
+            border-color: #787878;
+            border-style: solid;
+            width: 280px;
+            height: 44px; 
+            background-color: #2d0353;
+            border-radius: 6px;
+            margin: 0px 0px 14px 0px;
+            border-width: 0.5px;
+            color:#ffffff; 
+            margin-top: 10px; 
+            }
+
+         
+            .Yourcoursereg,
+    th,
+   td {
+      border: none;
+      border-collapse: collapse; 
+      text-align: left !important;
+      padding-right: 10px;
+      padding-left: 10px;
+      
+       } 
+         
+       
+       .searchbtn input[type=text] {
+        width: 65%; 
+      } 
+
+      .box select {
+        padding: 12px;
+        width: 130px !important;
+        font-size: 13px;
+     
+      } 
+
+      .reducesize select {
+        width: 83px;
+      }  
+  
+      .tabelinput {
+        mix-blend-mode: normal;
+      font-size: 13px;
+      font-family: Roboto;
+      line-height: 21px;
+      color: #787878;
+     
+      }   
+
+      .desc {
+        display: flex;
+        flex-direction: row;
+        justify-content: center !important;
+        padding-left: 12px;
+      }
+
+      .amendment {
+        padding-left: 10px;
+       }
+        .amendment select {
+          width: 280px;
+          height: 50px;
+          
+        }
+
+        } 
+      
