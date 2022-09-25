@@ -4,22 +4,22 @@ import styled from "styled-components";
 import axios from 'axios';
 import { BaseUrl } from 'components/Login';
 
-
-
 const YourResult = () => {
 
-  const [data, setData] = useState([])
+  // const [data, setData] = useState([])
   const [resCourse, setResCourse] = useState(false)
   const [responseresult, setResponseresult] = useState([])
   
+  const dataname = JSON.parse(localStorage.getItem('data'));
+  const data = dataname
 
   useEffect(() => {
     const fetchData = async () => {
  
-      const dataname = JSON.parse(localStorage.getItem('data'));
-      if (dataname) {
-        setData(dataname);   
-      }
+      // const dataname = JSON.parse(localStorage.getItem('data'));
+      // if (dataname) {
+      //   setData(dataname);   
+      // }
 
      const headers = {
        accept: 'application/json',
@@ -58,7 +58,7 @@ const YourResult = () => {
         <YourResultRoot>Your Result</YourResultRoot>  
         </div>
         
-
+        <div style={{overflowX: "auto"}} className='bg-white mx-3 '> 
 <table className='Yourcoursereg mx-auto my-6' style={{width:"100%"}} >    
      <tr style={{height:"40px", backgroundColor: "#e5e5e5"}}>
          {/* <th style={{width:"4%"}}></th>  */}
@@ -84,7 +84,7 @@ const YourResult = () => {
          <td><Text3>3</Text3></td>
          <td><Text3>{course.score}</Text3></td>
          <td><Text3>8</Text3></td>
-         <td><Text3>16</Text3></td>   
+         <td><Text3>16</Text3></td>  
      </tr>
     
     );})   :  ( <div className="pos-center" >
@@ -96,6 +96,7 @@ const YourResult = () => {
   
      
  </table>
+</div>
 
   
  

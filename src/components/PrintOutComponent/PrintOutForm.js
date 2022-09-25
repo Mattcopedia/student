@@ -1,3 +1,6 @@
+
+
+
 import React, {useEffect, useState} from 'react'
 import Sidebar from 'components/Sidebar';
 import styled from "styled-components";
@@ -14,6 +17,9 @@ const PrintOutForm = () => {
   const [resCourseTaken, setResCourseTaken] = useState(false)
   const [responseresultTaken, setResponseresultTaken] = useState([])
   const [data, setData] = useState([])
+
+  const submitdataname = JSON.parse(localStorage.getItem('courseData'));
+ const newsubmit = submitdataname.courses[0]
 
   useEffect(() => {
     const fetchInfo = async () => {
@@ -64,7 +70,7 @@ const PrintOutForm = () => {
        <div class="bg-red-50 col-span-4"> 
        <FlexColumnRoot>
       <Text1>Course Form</Text1>
-      <Paragraph>First-Semester-For 2020/2021 Academic Session.</Paragraph>
+      <Paragraph>First Semester For 2020/2021 Academic Session.</Paragraph>
      </FlexColumnRoot>
        
        </div>
@@ -115,7 +121,7 @@ const PrintOutForm = () => {
      </tr>
      <tr className='' style={{height:"25px"}}> 
          <td><label className="tabelinput" for="firstcourse"><Text3>Department:</Text3></label></td>
-         <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 >{data.programme}</Text3></label></td>
+         <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 >Physical Science</Text3></label></td>
 
      </tr>
 
@@ -133,7 +139,7 @@ const PrintOutForm = () => {
 
      <tr className='' style={{height:"25px"}}> 
          <td><label className="tabelinput" for="firstcourse"><Text3>Semester:</Text3></label></td>
-         <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 ></Text3></label></td>
+         <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 >{newsubmit.semester}</Text3></label></td>
 
      </tr> 
 
@@ -196,7 +202,7 @@ const PrintOutForm = () => {
          <td></td>
          <td></td>
          <td></td>
-         <td><TotalRoot>6</TotalRoot></td> 
+         <td><TotalRoot>30</TotalRoot></td> 
          
      </tr> 
 
@@ -611,14 +617,67 @@ const TotalRoot = styled.div`
   color: #df8909;
 `;
 
+export default PrintOutForm
+
+// import React, {useEffect, useState} from 'react'
+// import Sidebar from 'components/Sidebar';
+// import styled from "styled-components";
+// import line from "../../assets/img/Line 17.png"; 
+// import sig from "../../assets/img/image 34.png";
+// import axios from 'axios';
+// import { BaseUrl } from 'components/Login';
+
 
 
 // const PrintOutForm = () => {
+ 
+//   const [resCourseTaken, setResCourseTaken] = useState(false)
+//   const [responseresultTaken, setResponseresultTaken] = useState([])
+//   // const [data, setData] = useState([])
+
+//   const submitdataname = JSON.parse(localStorage.getItem('submitData'));
+// const newsubmit = submitdataname.courses[0]
+// // if (newsubmit) {
+// //  setData(newsubmit);   
+// // }
+// const dataname = JSON.parse(localStorage.getItem('data'));
+// const data = dataname
+
+//   useEffect(() => {
+//     const fetchInfo = async () => {
+    
+//      const headers = {
+//        accept: 'application/json',
+//        Authorization: `Bearer ${data.token}`  
+//    }
+     
+//       try { 
+//         const response = await axios.post(`${BaseUrl}/api/v1/mycourses`, {
+//          school: data.school,
+//          programme: data.programme,
+//      },{ 
+//          headers: headers
+//      }); 
+//         console.log(response.data); 
+//         setResponseresultTaken(response.data)
+        
+//         localStorage.setItem('courseData', JSON.stringify(response.data.data)) 
+//         setResCourseTaken(true)
+       
+//       } catch (error) {
+//         console.error(error.message);   
+//       }
+    
+
+//     }
+
+//     fetchInfo();
+//   }, [data.school,data.programme,data.token]); 
 
 
 
 
-
+ 
 
 //   return (
 //     <>
@@ -628,7 +687,7 @@ const TotalRoot = styled.div`
 //        <div class="bg-red-50 col-span-4"> 
 //        <FlexColumnRoot>
 //       <Text1>Course Form</Text1>
-//       <Paragraph>First-Semester-For 2020/2021 Academic Session.</Paragraph>
+//       <Paragraph>{newsubmit.semester} Semester Academic Session .</Paragraph>
 //      </FlexColumnRoot>
        
 //        </div>
@@ -667,39 +726,39 @@ const TotalRoot = styled.div`
 //      </tr> 
 //      <tr className='' style={{height:"25px"}}> 
 //          <td><label className="tabelinput" for="firstcourse"><Text3>Matric Number:</Text3></label></td>
-//          <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 >STA/20/7009</Text3></label></td>
+//          <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 > {data.userId}</Text3></label></td>
 
 //      </tr>
   
    
 //      <tr className='' style={{height:"25px"}}> 
 //          <td><label className="tabelinput" for="firstcourse"><Text3>Full Name:</Text3></label></td>
-//          <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 >Ayomide Akinyemi</Text3></label></td>
+//          <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 >{data.firstName} {data.lastName}</Text3></label></td>
 
 //      </tr>
 //      <tr className='' style={{height:"25px"}}> 
 //          <td><label className="tabelinput" for="firstcourse"><Text3>Department:</Text3></label></td>
-//          <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 >Engineering</Text3></label></td>
+//          <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 >Physical Science</Text3></label></td>
 
 //      </tr>
 
 //      <tr className='' style={{height:"25px"}}> 
 //          <td><label className="tabelinput" for="firstcourse"><Text3>Programme:</Text3></label></td>
-//          <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 >Statistics</Text3></label></td>
+//          <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 >{data.programme}</Text3></label></td>
 
 //      </tr>
 
 //      <tr className='' style={{height:"25px"}}> 
 //          <td><label className="tabelinput" for="firstcourse"><Text3>Level:</Text3></label></td>
-//          <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 >100</Text3></label></td>
-
+//          <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 >{data.level}</Text3></label></td>
+  
 //      </tr>
 
 //      <tr className='' style={{height:"25px"}}> 
 //          <td><label className="tabelinput" for="firstcourse"><Text3>Semester:</Text3></label></td>
-//          <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3 >Second Semester 2020/2021</Text3></label></td>
+//          <td style={{paddingLeft:"40px"}}><label className="tabelinput" for="firstcourse"><Text3>{newsubmit.semester}</Text3></label></td>
 
-//      </tr>
+//      </tr> 
 
      
      
@@ -735,56 +794,21 @@ const TotalRoot = styled.div`
            
          
 //      </tr> 
-//      <tr style={{height:"70px"}}>  
-//          <td ><label style={{ paddingLeft: "10px"}}  className="tabelinput" for="firstcourse">1</label></td> 
-//          <td><label className="tabelinput" for="firstcourse">Course Code</label></td>
-//          <td colspan="5" style={{paddingLeft:"10px"}}><label className="tabelinput" for="firstcourse">Introduction to Statistics and Maths</label></td>
-//          <td style={{width:"90px"}}></td> 
-        
-//          <td style={{width:"90px"}}><label className="tabelinput" for="firstcourse">4</label></td>
-//      </tr>
-//      <tr className='bg-gray-100' style={{height:"70px"}}> 
-//      <td ><label style={{ paddingLeft: "10px"}}  className="tabelinput" for="firstcourse">2</label></td> 
-//          <td><label className="tabelinput" for="firstcourse">Course Code</label></td>
-//          <td colspan="5" style={{paddingLeft:"10px"}}><label className="tabelinput" for="firstcourse">Introduction to Statistics and Maths</label></td>
-//          <td style={{width:"90px"}}></td> 
-        
-//          <td style={{width:"90px"}}><label className="tabelinput" for="firstcourse">4</label></td>
-//      </tr>
-//      <tr style={{height:"70px"}}> 
-//      <td ><label style={{ paddingLeft: "10px"}}  className="tabelinput" for="firstcourse">3</label></td> 
-//          <td><label className="tabelinput" for="firstcourse">Course Code</label></td>
-//          <td colspan="5" style={{paddingLeft:"10px"}}><label className="tabelinput" for="firstcourse">Introduction to Statistics and Maths</label></td>
-//          <td style={{width:"90px"}}></td> 
-        
-//          <td style={{width:"90px"}}><label className="tabelinput" for="firstcourse">4</label></td>
-//      </tr>
-//      <tr className='bg-gray-100' style={{height:"70px"}}> 
-//      <td ><label style={{ paddingLeft: "10px"}}  className="tabelinput" for="firstcourse">4</label></td> 
-//          <td><label className="tabelinput" for="firstcourse">Course Code</label></td>
-//          <td colspan="5" style={{paddingLeft:"10px"}}><label className="tabelinput" for="firstcourse">Introduction to Statistics and Maths</label></td>
-//          <td style={{width:"90px"}}></td> 
-        
-//          <td style={{width:"90px"}}><label className="tabelinput" for="firstcourse">4</label></td>
-//      </tr>
-//      <tr style={{height:"70px"}}> 
-//      <td ><label style={{ paddingLeft: "10px"}}  className="tabelinput" for="firstcourse">5</label></td> 
-//          <td><label className="tabelinput" for="firstcourse">Course Code</label></td>
-//          <td colspan="5" style={{paddingLeft:"10px"}}><label className="tabelinput" for="firstcourse">Introduction to Statistics and Maths</label></td>
-//          <td style={{width:"90px"}}></td> 
-        
-//          <td style={{width:"90px"}}><label className="tabelinput" for="firstcourse">4</label></td>
-//      </tr>
+//      {  resCourseTaken ?  responseresultTaken.data.courses.map((course) => (
 
-//      <tr style={{height:"70px"}}> 
-//      <td ><label style={{ paddingLeft: "10px"}}  className="tabelinput" for="firstcourse">6</label></td> 
-//          <td><label className="tabelinput" for="firstcourse">Course Code</label></td>
-//          <td colspan="5" style={{paddingLeft:"10px"}}><label className="tabelinput" for="firstcourse">Introduction to Statistics and Maths</label></td>
-//          <td style={{width:"90px"}}></td> 
+//      <tr key={course.id} style={{height:"70px"}}>  
+//          <td ><label style={{ paddingLeft: "10px"}}  className="tabelinput" for="firstcourse">{course.id}</label></td> 
+//          <td><label className="tabelinput" for="firstcourse">{course.courseCode}</label></td>
+//          <td colspan="5" style={{paddingLeft:"10px"}}><label className="tabelinput" for="firstcourse">{course.courseTitle}</label></td>
+//          <td style={{width:"90px"}}></td>  
         
-//          <td style={{width:"90px"}}><label className="tabelinput" for="firstcourse">4</label></td>
+//          <td style={{width:"90px"}}><label className="tabelinput" for="firstcourse">{course.courseUnit}</label></td>
 //      </tr>
-
+//        ))  :  ( <div className="pos-center" >
+//        <div className="loader"></div> 
+//       </div>
+//  )  } 
+  
     
 
 //      <tr style={{height:"70px",}}> 
@@ -795,7 +819,7 @@ const TotalRoot = styled.div`
 //          <td></td>
 //          <td></td>
 //          <td></td>
-//          <td><TotalRoot>24</TotalRoot></td> 
+//          <td><TotalRoot>30</TotalRoot></td> 
          
 //      </tr> 
 
@@ -928,7 +952,7 @@ const TotalRoot = styled.div`
 
 //      <RectangleRoot>
 //       <p className='text-white cursor-pointer pt-1 px-4 text-center'>Print</p>   
-//     </RectangleRoot>
+//     </RectangleRoot> 
 
     
 //      </div>
@@ -1210,10 +1234,8 @@ const TotalRoot = styled.div`
 //   color: #df8909;
 // `;
 
+// export default PrintOutForm
 
 
 
 
-
-
-export default PrintOutForm

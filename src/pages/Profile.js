@@ -413,13 +413,6 @@ const Text9zw = styled.div`
   line-height: 18px;
   color: #b3b1b1;
 `;
-const FlexColumn6zw = styled.div`
-  display: flex;
-  align-self: flex-end;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
 
 
 

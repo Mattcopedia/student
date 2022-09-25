@@ -54,18 +54,19 @@ const CourseReg = () => {
 
   const [resCourseTaken, setResCourseTaken] = useState(false)
   const [responseresultTaken, setResponseresultTaken] = useState([])
-  const [data, setData] = useState([])
+  // const [data, setData] = useState([])
   const [shouldshow, setShouldshow] = useState(false);
 
-
+  const dataname = JSON.parse(localStorage.getItem('data'));
+  const data = dataname
 
   useEffect(() => {
     const fetchInfo = async () => {
     
-      const dataname = JSON.parse(localStorage.getItem('data'));
-      if (dataname) {
-       setData(dataname);   
-      }
+      // const dataname = JSON.parse(localStorage.getItem('data'));
+      // if (dataname) {
+      //  setData(dataname);   
+      // }
     
      const headers = {
        accept: 'application/json',
@@ -142,10 +143,10 @@ const CourseReg = () => {
        
          <table className='Yourcoursereg mx-auto my-6' style={{width:"100%"}} >    
      <tr style={{height:"40px", backgroundColor: "#e5e5e5"}}>
-         {/* <th style={{width:"4%"}}></th>  */}
+        <th style={{width:"5%"}}></th>
          <th style={{width:"11.8%",paddingLeft:"10px"}}>Course Code</th>
          <th style={{width:"11.8%"}}>Department</th> 
-         <th style={{width:"35%"}}>Course Title</th>
+         <th style={{width:"30%"}}>Course Title</th>
          <th style={{width:"9.3%"}}>Unit</th>
          <th style={{width:"9.3%"}}>Status</th>
          <th style={{width:"9.3%"}}>Semester</th> 
@@ -154,8 +155,10 @@ const CourseReg = () => {
      </tr> 
    {  resCourseTaken ?  responseresultTaken.data.courses.map((course) => (
    
-     <tr key={course.id} style={{height:"70px"}}>  
-        
+     <tr key={course.id} style={{height:"70px"}}> 
+
+       <td> <input style={{marginLeft:"15px"}} type="checkbox" id="firstcourse" name="firstcourse"  />
+       </td>    
          <td style={{paddingLeft:"10px"}}><label for="firstcourse"> <Text3>{course.courseCode}</Text3></label></td>
          <td ><label for="firstcourse"><Text3>{course.programme}</Text3></label></td>
          <td><label for="firstcourse"><Text3>{course.courseTitle}</Text3></label></td>

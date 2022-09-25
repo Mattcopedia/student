@@ -12,7 +12,7 @@ export var BaseUrl = "https://asi.qlj.mybluehost.me/v2rakonibackend/public"
 
 const Login = () => {
  
-  const { onLogInClicked, emailValue, setEmailValue, passwordValue, setPasswordValue} = useCoins();
+  const { onLogInClicked,errorMessage, emailValue, setEmailValue, passwordValue, setPasswordValue} = useCoins();
   const focusDiv = useRef();
 
     useEffect(() => {
@@ -57,7 +57,8 @@ const Login = () => {
 
                 <FlexColumn1>
                 <Text3>Log in to your account</Text3>
-
+               
+                {errorMessage && <Error>{errorMessage}</Error>}
                         
                 <FlexColumn2 margin={`0px 0px 14px 0px`}>
                     <Text4>Student Email</Text4>
@@ -73,8 +74,8 @@ const Login = () => {
                     onChange={e => setPasswordValue(e.target.value)}
                 />     
                 </FlexColumn2>
-                <Purplebtn  disabled={!emailValue || !passwordValue}
-                onClick={onLogInClicked} >Login</Purplebtn> 
+                <div className='loginbtn' disabled={!emailValue || !passwordValue}
+                onClick={onLogInClicked} >Login</div>  
             
                 
                 </FlexColumn1> 
@@ -132,22 +133,16 @@ export const devices = {
 };
 
 
-const Purplebtn = styled.button`
-  border-color: #787878;
-  border-style: solid;
-  width: 367px;
- 
-  
-  background-color: #2d0353;
-  border-radius: 6px;
-  margin: 0px 0px 14px 0px;
-  border-width: 0.5px;
-  color:#ffffff;  
-  margin-top: 10px;
-  padding-top:8.5px;
-  padding-bottom:8.5px;
 
-`
+const Error = styled.div`
+font-size: 14px;
+font-family: Roboto;
+line-height: 21px;
+color: red;
+
+`;
+
+
 const Text1 = styled.div`
 font-size: 14px;
 font-family: Roboto;

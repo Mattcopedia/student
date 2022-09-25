@@ -1,7 +1,7 @@
 
 import Button from '@material-tailwind/react/Button';
 import Icon from '@material-tailwind/react/Icon';   
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from 'react-router-dom';
 import styled from "styled-components"; 
 
@@ -13,6 +13,7 @@ import { useToken } from '../auth/useToken';
 export default function AdminNavbar({ showSidebar, setShowSidebar }) {
       // eslint-disable-next-line 
   const [token, setToken] = useToken();
+  const [data, setData] = useState([]);
   const history = useHistory();
    
   const logOut = () => { 
@@ -20,6 +21,13 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
     history.push('/login');  
 }
 
+
+  useEffect(() => {
+    const dataname = JSON.parse(localStorage.getItem('data'));
+    if (data) {
+     setData(dataname);
+    }
+  }, [data]);
     return (
       <> 
         <nav className=" md:ml-64 py-6 px-3  bg-white"> 
@@ -82,7 +90,7 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
         </nav>
         <div className='flex  justify-center '>
 
-        <Paragraph>UNIGIG</Paragraph> 
+        <Paragraph>{data.school}</Paragraph> 
      
 
         </div>

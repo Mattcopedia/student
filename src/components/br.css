@@ -47,6 +47,25 @@ br.responsive {
     background-position: center;
     
   }
+  .loginbtn {
+    border-color: #787878;
+    border-style: solid;
+    width: 367px;
+    background-color: #2d0353;
+    border-radius: 6px;
+    margin: 0px 0px 14px 0px;
+    border-width: 0.5px;
+    color:#ffffff;  
+    margin-top: 10px;
+    padding-top:8.5px;
+    padding-bottom:8.5px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .loginbtn:disabled {
+    background-color: gray;
+  }
 
   .pos-center {
     position: fixed;
@@ -448,6 +467,11 @@ br.responsive {
             
 
           }
+         
+          .loginbtn {
+            width: 280px;
+          }
+
 
           .form::placeholder {
     

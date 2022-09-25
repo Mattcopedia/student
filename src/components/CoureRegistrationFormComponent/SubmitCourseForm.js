@@ -62,24 +62,28 @@ const SubmitCourseForm = () => {
   
   const [isClosed, setIsClosed] = useState(false);
   
-  const [courseInfo, setcourseInfo] = useState([])
+  // const [courseInfo, setcourseInfo] = useState([])
 
-  const [data, setData] = useState([])
+  // const [data, setData] = useState([])
 
   // const [responseresult, setResponseresult] = useState([])
   const [resCourseTaken, setResCourseTaken] = useState(false)
   const [responseresultTaken, setResponseresultTaken] = useState([])
   
+  const dataname = JSON.parse(localStorage.getItem('data'));
+const data = dataname
 
+const datanamecourse = JSON.parse(localStorage.getItem('courseData'));
+const courseInfo = datanamecourse
 
 
   useEffect(() => {
     const fetchInfo = async () => {
     
-      const dataname = JSON.parse(localStorage.getItem('data'));
-      if (dataname) {
-       setData(dataname);   
-      }
+      // const dataname = JSON.parse(localStorage.getItem('data'));
+      // if (dataname) {
+      //  setData(dataname);   
+      // }
     
      const headers = {
        accept: 'application/json',
@@ -116,15 +120,15 @@ const SubmitCourseForm = () => {
   
   const SubmitForm = async () => {
     if (isClosed) {
-     const dataname = JSON.parse(localStorage.getItem('data'));
-     if (dataname) {
-     setData(dataname);   
-     }
+    //  const dataname = JSON.parse(localStorage.getItem('data'));
+    //  if (dataname) {
+    //  setData(dataname);   
+    //  }
 
-     const coursedata = JSON.parse(localStorage.getItem('resultData'));
-     if (coursedata) {
-     setcourseInfo(coursedata);   
-     }
+    //  const coursedata = JSON.parse(localStorage.getItem('resultData'));
+    //  if (coursedata) {
+    //  setcourseInfo(coursedata);   
+    //  }
 
     const headers = {
       accept: 'application/json',
@@ -246,7 +250,7 @@ const SubmitCourseForm = () => {
        </td> 
        <td ><label for="firstcourse"></label></td>
        <td><label for="firstcourse"></label></td>
-       <td><label for="firstcourse"><Text4>6</Text4></label></td>
+       <td><label for="firstcourse"><Text4>30</Text4></label></td>
        <td><label for="firstcourse"></label></td>
        <td><label for="firstcourse"></label></td>
        <td><label for="firstcourse"></label></td>  
@@ -260,7 +264,7 @@ const SubmitCourseForm = () => {
      <br />
      <div class='justify'> 
      <RectangleRoot>
-      <p onClick={SubmitForm}  className='text-white  px-auto text-center  cursor-pointer'>Submit course form</p>   
+      <p onClick={SubmitForm}  className='text-white  px-auto  pt-3 md:pt-0 text-center  cursor-pointer'>Submit course form</p>   
     </RectangleRoot>
 
     
